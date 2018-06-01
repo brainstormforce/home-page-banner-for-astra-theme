@@ -38,7 +38,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		public function __construct() {
 
 			add_filter( 'astra_theme_defaults', array( $this, 'theme_defaults' ) );
-			add_action( 'customize_controls_enqueue_scripts', array( $this, 'controls_scripts' ), 9 );
+			// add_action( 'customize_controls_enqueue_scripts', array( $this, 'controls_scripts' ), 9 );
 			add_action( 'customize_register', array( $this, 'customize_register' ) );
 
 		}
@@ -52,7 +52,11 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		function theme_defaults( $defaults ) {
 
 			// Blog / Archive.
-			// $defaults['blog-masonry']               = false;
+			$defaults['ast-banner-heading']     = __( 'Heading', 'astra' );
+			$defaults['ast-banner-subheading']  = __( 'Sub Heading', 'astra' );
+			$defaults['font-family-banner'] 	= 'inherit';
+			$defaults['font-weight-banner'] 	= 'inherit';
+			$defaults['banner-bg-color'] 		= '#ffffff';
 
 			return $defaults;
 		}

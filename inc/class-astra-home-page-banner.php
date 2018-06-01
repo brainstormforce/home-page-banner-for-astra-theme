@@ -43,7 +43,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner' ) ) {
 
 			// Include front end files.
 			if ( ! is_admin() ) {
-				// require_once ASTRA_HOME_PAGE_BANNER_DIR . 'classes/dynamic.css.php';
+				require_once ASTRA_HOME_PAGE_BANNER_DIR . 'classes/dynamic.css.php';
 			}
 
 		}

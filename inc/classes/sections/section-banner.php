@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		ASTRA_THEME_SETTINGS . '[ast-banner-heading]', array(
 			'default'           => astra_get_option( 'ast-banner-heading' ),
 			'type'              => 'option',
-			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_checkbox', 'sanitize_text_field' ),
+			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
@@ -58,7 +58,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		ASTRA_THEME_SETTINGS . '[ast-banner-subheading]', array(
 			'default'           => astra_get_option( 'ast-banner-subheading' ),
 			'type'              => 'option',
-			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_checkbox', 'sanitize_text_field' ),
+			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
@@ -74,19 +74,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * Option: Heading and Sub Heading Font Family
 	 */
 	$wp_customize->add_setting(
-		ASTRA_THEME_SETTINGS . '[font-family-banner-heading-subheading]', array(
-			'default'           => astra_get_option( 'font-family-banner-heading-subheading' ),
+		ASTRA_THEME_SETTINGS . '[banner-font-family]', array(
+			'default'           => astra_get_option( 'banner-font-family' ),
 			'type'              => 'option',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
 		new Astra_Control_Typography(
-			$wp_customize, ASTRA_THEME_SETTINGS . '[font-family-banner-heading-subheading]', array(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-font-family]', array(
 				'type'    => 'ast-font-family',
 				'label'   => __( 'Font Family', 'astra-addon' ),
 				'section' => 'section-banner-style',
-				'connect' => ASTRA_THEME_SETTINGS . '[font-weight-below-header-primary-menu]',
+				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-weight]',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-font-weight]', array(
+			'default'           => astra_get_option( 'banner-font-weight' ),
+			'type'              => 'option',
+			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_font_weight' ),
+		)
+	);
+	$wp_customize->add_control(
+		new Astra_Control_Typography(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-font-weight]', array(
+				'type'    => 'ast-font-weight',
+				'label'   => __( 'Font Weight', 'astra-addon' ),
+				'section' => 'section-banner-style',
+				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-family]',
 			)
 		)
 	);
@@ -103,7 +121,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Astra_Control_Color(
 			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-bg-color]', array(
 				'type'    => 'ast-color',
-				'label'   => __( 'Background Overlay Color', 'astra-addon' ),
+				'label'   => __( 'Color', 'astra-addon' ),
 				'section' => 'section-banner-style',
 			)
 		)

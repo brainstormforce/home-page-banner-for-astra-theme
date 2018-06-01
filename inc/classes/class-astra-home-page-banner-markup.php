@@ -2,7 +2,8 @@
 /**
  * Advanced Headers Markup
  *
- * @package Astra Addon
+ * @package Home Page Banner for Astra Theme
+ * @since 1.0.0
  */
 
 if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
@@ -72,13 +73,22 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 				return;
 			}
 			
+			$banner_heading 	= astra_get_option('ast-banner-heading');
+			$banner_subheading 	= astra_get_option('ast-banner-subheading');
+
 			// Add advanced header wrapper classes.
 			// printf(
 			// 	'<div class="%1$s" %2$s>',
 			// 	$combined . $parallax . $full_screen . $vertical_center, ( ! empty( $parallax ) ) ? 'data-parallax-speed="' . esc_attr( $parallax_speed ) . '"' : ''
 			// );
 
-			echo '<div class="home-page-banner"> THIS IS HOME PAGE BANNER </div>';
+			$html = '<div class="home-page-banner">' .
+						'<div class="heading-container">' .
+							'<h1>'.$banner_heading.'</h1>' .
+							'<h3>'.$banner_subheading.'</h3>' .
+						'</div>' .
+					'</div>';
+			echo $html;
 		}
 
 		/**

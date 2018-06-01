@@ -84,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Astra_Control_Typography(
 			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-font-family]', array(
 				'type'    => 'ast-font-family',
-				'label'   => __( 'Font Family', 'astra-addon' ),
+				'label'   => __( 'Font Family', 'astra' ),
 				'section' => 'section-banner-style',
 				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-weight]',
 			)
@@ -102,7 +102,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Astra_Control_Typography(
 			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-font-weight]', array(
 				'type'    => 'ast-font-weight',
-				'label'   => __( 'Font Weight', 'astra-addon' ),
+				'label'   => __( 'Font Weight', 'astra' ),
 				'section' => 'section-banner-style',
 				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-family]',
 			)
@@ -121,7 +121,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Astra_Control_Color(
 			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-bg-color]', array(
 				'type'    => 'ast-color',
-				'label'   => __( 'Color', 'astra-addon' ),
+				'label'   => __( 'Color', 'astra' ),
 				'section' => 'section-banner-style',
 			)
 		)

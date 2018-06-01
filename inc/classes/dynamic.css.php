@@ -18,7 +18,6 @@ add_action( 'wp_enqueue_scripts', 'astra_banner_dynamic_css' );
  */
 function astra_banner_dynamic_css() {
 
-	echo "stringstringstringstringstringstringstringstringstringstringstringstringstringstringstringstringstringstringstringstringstringstring";
 	$body_font_family    			= astra_body_font_family();
 
 	// Typography.

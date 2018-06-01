@@ -32,6 +32,80 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-image-size-option]', array(
+			'default'           => astra_get_option( 'banner-image-size-option' ),
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_choices' ),
+		)
+	);
+	$wp_customize->add_control(
+		ASTRA_THEME_SETTINGS . '[banner-image-size-option]', array(
+			'section'  => 'section-banner-content',
+			'priority'  => 10,
+			'label'   => __( 'Image Size', 'astra' ),
+			'type'    => 'select',
+			'choices' => array(
+				'custom-size' => __( ' Custom Size', 'astra' ),
+				'full-size'   => __( ' Full screen', 'astra' ),
+			),
+		)
+	);
+
+	/**
+	 * Option: Custom size top padding
+	 */
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-custom-top-padding]', array(
+			'default'           => astra_get_option( 'banner-custom-top-padding' ),
+			'type'              => 'option',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		ASTRA_THEME_SETTINGS . '[banner-custom-top-padding]', array(
+			'type'     => 'text',
+			'section'  => 'section-banner-content',
+			'label'    => __( 'Top Padding', 'astra' ),
+			'priority' => 15,
+		    'active_callback'  => array(
+		        array(
+		            'setting'  => ASTRA_THEME_SETTINGS . '[banner-image-size-option]',
+		            'operator' => '!=',
+		            'value'    => 'full-size',
+		        ),
+		    )
+		)
+	);
+
+	/**
+	 * Option: Custom size bottom-padding
+	 */
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-custom-bottom-padding]', array(
+			'default'           => astra_get_option( 'banner-custom-bottom-padding' ),
+			'type'              => 'option',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		ASTRA_THEME_SETTINGS . '[banner-custom-bottom-padding]', array(
+			'type'     => 'text',
+			'section'  => 'section-banner-content',
+			'label'    => __( 'Bottom Padding', 'astra' ),
+			'priority' => 20,
+		    'transport'   => 'postMessage',
+		    'active_callback'  => array(
+		        array(
+		            'setting'  => ASTRA_THEME_SETTINGS . '[banner-image-size-option]',
+		            'operator' => '!=',
+		            'value'    => 'full-size',
+		        ),
+		    )
+		)
+	);
+
 	/**
 	 * Option: Add Heading
 	 */

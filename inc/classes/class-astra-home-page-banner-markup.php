@@ -82,7 +82,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 
 			$html = '<div class="home-page-banner'.$full_screen.'">' .
 						'<div class="heading-container">' .
-							'<h1 class="banner-heading">'.$banner_heading.'</h1>' .
+							'<h2 class="banner-heading">'.$banner_heading.'</h2>' .
 							'<h3 class="banner-subheading">'.$banner_subheading.'</h3>' .
 						'</div>' .
 					'</div>';

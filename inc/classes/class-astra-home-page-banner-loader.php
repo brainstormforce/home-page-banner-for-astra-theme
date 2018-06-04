@@ -82,12 +82,12 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 			/**
 			 * Register Sections & Panels
 			 */
-			require_once ASTRA_HOME_PAGE_BANNER_DIR . 'customizer-panels-and-sections.php';
+			require_once HOME_PAGE_BANNER_DIR . 'customizer-panels-and-sections.php';
 
 			/**
 			 * Sections
 			 */
-			require_once ASTRA_HOME_PAGE_BANNER_DIR . 'sections/section-banner.php';
+			require_once HOME_PAGE_BANNER_DIR . 'sections/section-banner.php';
 		}
 
 		/**
@@ -97,7 +97,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		 */
 		function preview_scripts() {
 
-			wp_enqueue_script( 'home-page-banner-preview', ASTRA_HOME_PAGE_BANNER_URI . 'inc/assets/js/customizer-preview.js', array( 'astra-customizer-preview-js', 'customize-preview' ), ASTRA_HOME_PAGE_BANNER_VER, true );
+			wp_enqueue_script( 'home-page-banner-preview', HOME_PAGE_BANNER_URI . 'inc/assets/js/customizer-preview.js', array( 'astra-customizer-preview-js', 'customize-preview' ), HOME_PAGE_BANNER_VER, true );
 		}
 
 		/**
@@ -105,7 +105,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		 */
 		function controls_scripts() {
 
-			wp_enqueue_script( 'home-page-banner-toggles', ASTRA_HOME_PAGE_BANNER_URI . 'inc/assets/js/customizer-toggles.js', array( 'astra-customizer-controls-toggle-js' ), ASTRA_HOME_PAGE_BANNER_VER, true );
+			wp_enqueue_script( 'home-page-banner-toggles', HOME_PAGE_BANNER_URI . 'inc/assets/js/customizer-toggles.js', array( 'astra-customizer-controls-toggle-js' ), HOME_PAGE_BANNER_VER, true );
 		}
 
 		/**

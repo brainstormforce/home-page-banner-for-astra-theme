@@ -98,8 +98,8 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 				return;
 			}
 
-			wp_enqueue_script( 'home-page-banner-js', ASTRA_HOME_PAGE_BANNER_URI . 'inc/assets/js/home-page-banner.js', array( 'jquery' ), ASTRA_HOME_PAGE_BANNER_VER );
-			wp_enqueue_style( 'home-page-banner-css', ASTRA_HOME_PAGE_BANNER_URI . 'inc/assets/css/style.css', array(), ASTRA_HOME_PAGE_BANNER_VER );
+			wp_enqueue_script( 'home-page-banner-js', HOME_PAGE_BANNER_URI . 'inc/assets/js/home-page-banner.js', array( 'jquery' ), HOME_PAGE_BANNER_VER );
+			wp_enqueue_style( 'home-page-banner-css', HOME_PAGE_BANNER_URI . 'inc/assets/css/style.css', array(), HOME_PAGE_BANNER_VER );
 		}
 	}
 }

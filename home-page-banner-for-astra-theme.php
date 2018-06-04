@@ -16,24 +16,24 @@
  * Set constants.
  */
 
-if ( ! defined( 'ASTRA_HOME_PAGE_BANNER_VER' ) ) {
-	define( 'ASTRA_HOME_PAGE_BANNER_VER', '1.0.0' );
+if ( ! defined( 'HOME_PAGE_BANNER_VER' ) ) {
+	define( 'HOME_PAGE_BANNER_VER', '1.0.0' );
 }
 
-if ( ! defined( 'ASTRA_HOME_PAGE_BANNER_FILE' ) ) {
-	define( 'ASTRA_HOME_PAGE_BANNER_FILE', __FILE__ );
+if ( ! defined( 'HOME_PAGE_BANNER_FILE' ) ) {
+	define( 'HOME_PAGE_BANNER_FILE', __FILE__ );
 }
 
-if ( ! defined( 'ASTRA_HOME_PAGE_BANNER_BASE' ) ) {
-	define( 'ASTRA_HOME_PAGE_BANNER_BASE', plugin_basename( ASTRA_HOME_PAGE_BANNER_FILE ) );
+if ( ! defined( 'HOME_PAGE_BANNER_BASE' ) ) {
+	define( 'HOME_PAGE_BANNER_BASE', plugin_basename( HOME_PAGE_BANNER_FILE ) );
 }
 
-if ( ! defined( 'ASTRA_HOME_PAGE_BANNER_DIR' ) ) {
-	define( 'ASTRA_HOME_PAGE_BANNER_DIR', plugin_dir_path( '/', ASTRA_HOME_PAGE_BANNER_FILE ) );
+if ( ! defined( 'HOME_PAGE_BANNER_DIR' ) ) {
+	define( 'HOME_PAGE_BANNER_DIR', plugin_dir_path( '/', HOME_PAGE_BANNER_FILE ) );
 }
 
-if ( ! defined( 'ASTRA_HOME_PAGE_BANNER_URI' ) ) {
-	define( 'ASTRA_HOME_PAGE_BANNER_URI', plugins_url( '/', ASTRA_HOME_PAGE_BANNER_FILE ) );
+if ( ! defined( 'HOME_PAGE_BANNER_URI' ) ) {
+	define( 'HOME_PAGE_BANNER_URI', plugins_url( '/', HOME_PAGE_BANNER_FILE ) );
 }
 
 
@@ -45,7 +45,7 @@ if ( ! function_exists( 'astra_home_page_banner_setup' ) ) :
 	 * @since 1.0.0
 	 */
 	function astra_home_page_banner_setup() {
-		require_once ASTRA_HOME_PAGE_BANNER_DIR . 'inc/class-astra-home-page-banner.php';
+		require_once HOME_PAGE_BANNER_DIR . 'inc/class-astra-home-page-banner.php';
 	}
 
 	add_action( 'plugins_loaded', 'astra_home_page_banner_setup' );

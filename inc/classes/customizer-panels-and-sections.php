@@ -10,17 +10,26 @@
  * Layout Panel
  */
 
+$wp_customize->add_panel(
+	'panel-home-page-banner', array(
+		'priority' => 15,
+		'title'    => __( 'Home Page Banner', 'home-page-banner' ),
+	)
+);
+
 $wp_customize->add_section(
 	'section-banner-content', array(
 		'priority' => 15,
-		'title'    => __( 'Content', 'astra' ),
+		'title'    => __( 'Content', 'home-page-banner' ),
+		'panel'    => 'panel-home-page-banner',
 	)
 );
 
 $wp_customize->add_section(
 	'section-banner-style', array(
 		'priority' => 15,
-		'title'    => __( 'Style', 'astra' ),
+		'title'    => __( 'Style', 'home-page-banner' ),
+		'panel'    => 'panel-home-page-banner',
 	)
 );
 

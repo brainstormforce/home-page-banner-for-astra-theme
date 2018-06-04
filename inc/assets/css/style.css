@@ -1,0 +1,23 @@
+/**
+ *  Home Page Banner
+ *
+ */
+
+.home-page-banner {
+    text-align: center;
+}
+
+.home-page-banner.ast-full-home-page-banner {
+    height: 100vh;
+    -js-display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home-page-banner .heading-container {
+    width: 100%;
+}

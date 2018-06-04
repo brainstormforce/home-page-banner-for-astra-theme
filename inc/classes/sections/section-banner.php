@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$wp_customize, ASTRA_THEME_SETTINGS . '[ast-banner-image]', array(
 				'section'        => 'section-banner-content',
 				'priority'       => 5,
-				'label'          => __( 'Banner Image', 'astra' ),
+				'label'          => __( 'Banner Image', 'home-page-banner' ),
 				'library_filter' => array( 'gif', 'jpg', 'jpeg', 'png', 'ico' ),
 			)
 		)
@@ -36,7 +36,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		ASTRA_THEME_SETTINGS . '[banner-image-size-option]', array(
 			'default'           => astra_get_option( 'banner-image-size-option' ),
 			'type'              => 'option',
-			'transport'         => 'postMessage',
 			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_choices' ),
 		)
 	);
@@ -44,11 +43,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		ASTRA_THEME_SETTINGS . '[banner-image-size-option]', array(
 			'section'  => 'section-banner-content',
 			'priority'  => 10,
-			'label'   => __( 'Image Size', 'astra' ),
+			'label'   => __( 'Image Size', 'home-page-banner' ),
 			'type'    => 'select',
 			'choices' => array(
-				'custom-size' => __( ' Custom Size', 'astra' ),
-				'full-size'   => __( ' Full screen', 'astra' ),
+				'custom-size' => __( ' Custom Size', 'home-page-banner' ),
+				'full-size'   => __( ' Full screen', 'home-page-banner' ),
 			),
 		)
 	);
@@ -67,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		ASTRA_THEME_SETTINGS . '[banner-custom-top-padding]', array(
 			'type'     => 'text',
 			'section'  => 'section-banner-content',
-			'label'    => __( 'Top Padding', 'astra' ),
+			'label'    => __( 'Top Padding', 'home-page-banner' ),
 			'priority' => 15,
 		    'active_callback'  => array(
 		        array(
@@ -93,7 +92,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		ASTRA_THEME_SETTINGS . '[banner-custom-bottom-padding]', array(
 			'type'     => 'text',
 			'section'  => 'section-banner-content',
-			'label'    => __( 'Bottom Padding', 'astra' ),
+			'label'    => __( 'Bottom Padding', 'home-page-banner' ),
 			'priority' => 20,
 		    'transport'   => 'postMessage',
 		    'active_callback'  => array(
@@ -120,7 +119,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		ASTRA_THEME_SETTINGS . '[ast-banner-heading]', array(
 			'type'     => 'text',
 			'section'  => 'section-banner-content',
-			'label'    => __( 'Banner Heading', 'astra' ),
+			'label'    => __( 'Banner Heading', 'home-page-banner' ),
 			'priority' => 6,
 		)
 	);
@@ -139,13 +138,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 		ASTRA_THEME_SETTINGS . '[ast-banner-subheading]', array(
 			'type'     => 'text',
 			'section'  => 'section-banner-content',
-			'label'    => __( 'Banner Subheading', 'astra' ),
+			'label'    => __( 'Banner Subheading', 'home-page-banner' ),
 			'priority' => 6,
 		)
 	);
 
+	$wp_customize->add_control(
+		new Astra_Control_Divider(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[divider-section-banner-heading]', array(
+				'type'     => 'ast-divider',
+				'section'  => 'section-banner-style',
+				'priority' => 5,
+				'label'    => __( 'heading', 'home-page-banner' ),
+				'settings' => array(),
+			)
+		)
+	);
+
 	/**
-	 * Option: Heading and Sub Heading Font Family
+	 * Option: Heading Font Family
 	 */
 	$wp_customize->add_setting(
 		ASTRA_THEME_SETTINGS . '[banner-font-family]', array(
@@ -158,7 +169,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Astra_Control_Typography(
 			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-font-family]', array(
 				'type'    => 'ast-font-family',
-				'label'   => __( 'Font Family', 'astra' ),
+				'label'   => __( 'Font Family', 'home-page-banner' ),
 				'section' => 'section-banner-style',
 				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-weight]',
 			)
@@ -176,9 +187,81 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Astra_Control_Typography(
 			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-font-weight]', array(
 				'type'    => 'ast-font-weight',
-				'label'   => __( 'Font Weight', 'astra' ),
+				'label'   => __( 'Font Weight', 'home-page-banner' ),
 				'section' => 'section-banner-style',
 				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-family]',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-heading-text-transform]', array(
+			'default'           => astra_get_option( 'banner-heading-text-transform' ),
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_choices' ),
+		)
+	);
+	$wp_customize->add_control(
+		ASTRA_THEME_SETTINGS . '[banner-heading-text-transform]', array(
+			'section' => 'section-banner-style',
+			'label'   => __( 'Text Transform', 'astra-addon' ),
+			'type'    => 'select',
+			'choices' => array(
+				''           => __( 'Inherit', 'astra-addon' ),
+				'none'       => __( 'None', 'astra-addon' ),
+				'capitalize' => __( 'Capitalize', 'astra-addon' ),
+				'uppercase'  => __( 'Uppercase', 'astra-addon' ),
+				'lowercase'  => __( 'Lowercase', 'astra-addon' ),
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-heading-font-size]', array(
+			'default'           => astra_get_option( 'banner-heading-font-size' ),
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_responsive_typo' ),
+		)
+	);
+	$wp_customize->add_control(
+		new Astra_Control_Responsive(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-heading-font-size]', array(
+				'section'     => 'section-banner-style',
+				'label'       => __( 'Font Size', 'astra-addon' ),
+				'type'        => 'ast-responsive',
+				'input_attrs' => array(
+					'min' => 0,
+				),
+				'units'       => array(
+					'px' => 'px',
+					'em' => 'em',
+				),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-heading-line-height]', array(
+			'default'           => '',
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_number_n_blank' ),
+		)
+	);
+	$wp_customize->add_control(
+		new Astra_Control_Slider(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-heading-line-height]', array(
+				'section'     => 'section-banner-style',
+				'label'       => __( 'Line Height', 'astra-addon' ),
+				'type'        => 'ast-slider',
+				'suffix'      => '',
+				'input_attrs' => array(
+					'min'  => 1,
+					'step' => 0.01,
+					'max'  => 5,
+				),
 			)
 		)
 	);
@@ -195,10 +278,150 @@ if ( ! defined( 'ABSPATH' ) ) {
 		new Astra_Control_Color(
 			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-bg-color]', array(
 				'type'    => 'ast-color',
-				'label'   => __( 'Color', 'astra' ),
+				'label'   => __( 'Color', 'home-page-banner' ),
 				'section' => 'section-banner-style',
 			)
 		)
 	);
 
+	$wp_customize->add_control(
+		new Astra_Control_Divider(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[divider-section-banner-subheading]', array(
+				'type'     => 'ast-divider',
+				'section'  => 'section-banner-style',
+				'priority' => 10,
+				'label'    => __( 'Subheading', 'home-page-banner' ),
+				'settings' => array(),
+			)
+		)
+	);
+
+	/**
+	 * Option: Sub Heading Font Family
+	 */
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-subheading-font-family]', array(
+			'default'           => astra_get_option( 'banner-subheading-font-family' ),
+			'type'              => 'option',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new Astra_Control_Typography(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-subheading-font-family]', array(
+				'type'    => 'ast-font-family',
+				'label'   => __( 'Font Family', 'home-page-banner' ),
+				'section' => 'section-banner-style',
+				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-weight]',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-subheading-font-weight]', array(
+			'default'           => astra_get_option( 'banner-subheading-font-weight' ),
+			'type'              => 'option',
+			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_font_weight' ),
+		)
+	);
+	$wp_customize->add_control(
+		new Astra_Control_Typography(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-subheading-font-weight]', array(
+				'type'    => 'ast-font-weight',
+				'label'   => __( 'Font Weight', 'home-page-banner' ),
+				'section' => 'section-banner-style',
+				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-family]',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-subheading-text-transform]', array(
+			'default'           => astra_get_option( 'banner-subheading-text-transform' ),
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_choices' ),
+		)
+	);
+	$wp_customize->add_control(
+		ASTRA_THEME_SETTINGS . '[banner-subheading-text-transform]', array(
+			'section' => 'section-banner-style',
+			'label'   => __( 'Text Transform', 'astra-addon' ),
+			'type'    => 'select',
+			'choices' => array(
+				''           => __( 'Inherit', 'astra-addon' ),
+				'none'       => __( 'None', 'astra-addon' ),
+				'capitalize' => __( 'Capitalize', 'astra-addon' ),
+				'uppercase'  => __( 'Uppercase', 'astra-addon' ),
+				'lowercase'  => __( 'Lowercase', 'astra-addon' ),
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-subheading-font-size]', array(
+			'default'           => astra_get_option( 'banner-subheading-font-size' ),
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_responsive_typo' ),
+		)
+	);
+	$wp_customize->add_control(
+		new Astra_Control_Responsive(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-subheading-font-size]', array(
+				'section'     => 'section-banner-style',
+				'label'       => __( 'Font Size', 'astra-addon' ),
+				'type'        => 'ast-responsive',
+				'input_attrs' => array(
+					'min' => 0,
+				),
+				'units'       => array(
+					'px' => 'px',
+					'em' => 'em',
+				),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-subheading-line-height]', array(
+			'default'           => '',
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_number_n_blank' ),
+		)
+	);
+	$wp_customize->add_control(
+		new Astra_Control_Slider(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-subheading-line-height]', array(
+				'section'     => 'section-banner-style',
+				'label'       => __( 'Line Height', 'astra-addon' ),
+				'type'        => 'ast-slider',
+				'suffix'      => '',
+				'input_attrs' => array(
+					'min'  => 1,
+					'step' => 0.01,
+					'max'  => 5,
+				),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		ASTRA_THEME_SETTINGS . '[banner-subheading-bg-color]', array(
+			'default'           => astra_get_option( 'banner-subheading-bg-color' ),
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_alpha_color' ),
+		)
+	);
+	$wp_customize->add_control(
+		new Astra_Control_Color(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[banner-subheading-bg-color]', array(
+				'type'    => 'ast-color',
+				'label'   => __( 'Color', 'home-page-banner' ),
+				'section' => 'section-banner-style',
+			)
+		)
+	);
 

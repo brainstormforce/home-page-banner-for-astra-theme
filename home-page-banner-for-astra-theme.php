@@ -6,7 +6,7 @@
  * Version: 1.0.0
  * Author: Brainstorm Force
  * Author URI: http://www.brainstormforce.com
- * Text Domain: astra-home-page-banner
+ * Text Domain: home-page-banner
  *
  * @package Home Page Banner for Astra Theme
  */

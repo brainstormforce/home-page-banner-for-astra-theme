@@ -82,12 +82,12 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 			/**
 			 * Register Sections & Panels
 			 */
-			require_once HOME_PAGE_BANNER_DIR . 'customizer-panels-and-sections.php';
+			require_once HOME_PAGE_BANNER_DIR . 'inc/classes/customizer-panels-and-sections.php';
 
 			/**
 			 * Sections
 			 */
-			require_once HOME_PAGE_BANNER_DIR . 'sections/section-banner.php';
+			require_once HOME_PAGE_BANNER_DIR . 'inc/classes/sections/section-banner.php';
 		}
 
 		/**

@@ -29,7 +29,7 @@ if ( ! defined( 'HOME_PAGE_BANNER_BASE' ) ) {
 }
 
 if ( ! defined( 'HOME_PAGE_BANNER_DIR' ) ) {
-	define( 'HOME_PAGE_BANNER_DIR', plugin_dir_path( '/', HOME_PAGE_BANNER_FILE ) );
+	define( 'HOME_PAGE_BANNER_DIR', plugin_dir_path( HOME_PAGE_BANNER_FILE ) );
 }
 
 if ( ! defined( 'HOME_PAGE_BANNER_URI' ) ) {

@@ -69,7 +69,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 		 */
 		function load_markup() {
 
-			if ( is_front_page() ) {
+			if ( ! is_home() ) {
 				return;
 			}
 			
@@ -94,7 +94,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 		 */
 		function add_scripts() {
 
-			if ( is_front_page() ) {
+			if ( ! is_home() ) {
 				return;
 			}
 

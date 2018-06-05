@@ -42,7 +42,7 @@ function astra_banner_dynamic_css() {
 
 
 	//Image
-	$banner_image					= astra_get_option( 'ast-banner-image' );
+	$banner_image					= astra_get_option( 'home-page-banner-image' );
 
 	// Background
 	$background_size				= astra_get_option( 'banner-image-size-option' );

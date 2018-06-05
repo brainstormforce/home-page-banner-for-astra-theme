@@ -41,9 +41,9 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 			add_filter( 'body_class', array( $this, 'body_classes' ), 10, 1 );
 
 			// After Headers action.
-			add_action( 'astra_header_after', array( $this, 'load_markup' ) );
+			add_action( 'astra_header_after', array( $this, 'load_markup' ), 0 );
 
-			add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ), 9 );
 
 		}
 

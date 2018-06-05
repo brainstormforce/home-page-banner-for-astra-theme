@@ -14,7 +14,7 @@
 			{
 				controls: [
 					'astra-settings[banner-custom-top-padding]',
-					'astra-settings[banner-custom-bottom-padding]',
+					'astra-settings[banner-custom-bottom-padding]'
 				],
 				callback: function( val ) {
 

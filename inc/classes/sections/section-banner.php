@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * Option: Retina logo selector
 	 */
 	$wp_customize->add_setting(
-		ASTRA_THEME_SETTINGS . '[ast-banner-image]', array(
-			'default'           => astra_get_option( 'ast-banner-image' ),
+		ASTRA_THEME_SETTINGS . '[home-page-banner-image]', array(
+			'default'           => astra_get_option( 'home-page-banner-image' ),
 			'type'              => 'option',
 			'sanitize_callback' => 'esc_url_raw',
 		)
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
-			$wp_customize, ASTRA_THEME_SETTINGS . '[ast-banner-image]', array(
+			$wp_customize, ASTRA_THEME_SETTINGS . '[home-page-banner-image]', array(
 				'section'        => 'section-banner-contents',
 				'priority'       => 5,
 				'label'          => __( 'Banner Image', 'home-page-banner' ),
@@ -85,7 +85,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control(
 		ASTRA_THEME_SETTINGS . '[banner-custom-bottom-padding]', array(
 			'type'     => 'text',
-			'section'  => 'section-banner-content',
+			'section'  => 'section-banner-contents',
 			'label'    => __( 'Bottom Padding', 'home-page-banner' ),
 			'priority' => 20,
 		    'transport'   => 'postMessage',
@@ -136,7 +136,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'type'     => 'ast-divider',
 				'section'  => 'section-banner-style',
 				'priority' => 5,
-				'label'    => __( 'heading', 'home-page-banner' ),
+				'label'    => __( 'Heading', 'home-page-banner' ),
 				'settings' => array(),
 			)
 		)

@@ -37,17 +37,17 @@ if ( ! defined( 'HOME_PAGE_BANNER_URI' ) ) {
 }
 
 
-if ( ! function_exists( 'astra_home_page_banner_setup' ) ) :
+if ( ! function_exists( 'home_page_banner_setup' ) ) :
 
 	/**
 	 * Astra Home Page Banner Setup
 	 *
 	 * @since 1.0.0
 	 */
-	function astra_home_page_banner_setup() {
+	function home_page_banner_setup() {
 		require_once HOME_PAGE_BANNER_DIR . 'inc/class-astra-home-page-banner.php';
 	}
 
-	add_action( 'plugins_loaded', 'astra_home_page_banner_setup' );
+	add_action( 'plugins_loaded', 'home_page_banner_setup' );
 
 endif;

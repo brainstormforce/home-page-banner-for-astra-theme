@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize, ASTRA_THEME_SETTINGS . '[ast-banner-image]', array(
-				'section'        => 'section-banner-content',
+				'section'        => 'section-banner-contents',
 				'priority'       => 5,
 				'label'          => __( 'Banner Image', 'home-page-banner' ),
 				'library_filter' => array( 'gif', 'jpg', 'jpeg', 'png', 'ico' ),
@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	);
 	$wp_customize->add_control(
 		ASTRA_THEME_SETTINGS . '[banner-image-size-option]', array(
-			'section'  => 'section-banner-content',
+			'section'  => 'section-banner-contents',
 			'priority'  => 10,
 			'label'   => __( 'Image Size', 'home-page-banner' ),
 			'type'    => 'select',
@@ -65,16 +65,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control(
 		ASTRA_THEME_SETTINGS . '[banner-custom-top-padding]', array(
 			'type'     => 'text',
-			'section'  => 'section-banner-content',
+			'section'  => 'section-banner-contents',
 			'label'    => __( 'Top Padding', 'home-page-banner' ),
 			'priority' => 15,
-		    'active_callback'  => array(
-		        array(
-		            'setting'  => ASTRA_THEME_SETTINGS . '[banner-image-size-option]',
-		            'operator' => '!=',
-		            'value'    => 'full-size',
-		        ),
-		    )
+		    'transport'   => 'postMessage',
 		)
 	);
 
@@ -95,13 +89,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			'label'    => __( 'Bottom Padding', 'home-page-banner' ),
 			'priority' => 20,
 		    'transport'   => 'postMessage',
-		    'active_callback'  => array(
-		        array(
-		            'setting'  => ASTRA_THEME_SETTINGS . '[banner-image-size-option]',
-		            'operator' => '!=',
-		            'value'    => 'full-size',
-		        ),
-		    )
 		)
 	);
 
@@ -118,7 +105,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control(
 		ASTRA_THEME_SETTINGS . '[ast-banner-heading]', array(
 			'type'     => 'text',
-			'section'  => 'section-banner-content',
+			'section'  => 'section-banner-contents',
 			'label'    => __( 'Banner Heading', 'home-page-banner' ),
 			'priority' => 6,
 		)
@@ -137,7 +124,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control(
 		ASTRA_THEME_SETTINGS . '[ast-banner-subheading]', array(
 			'type'     => 'text',
-			'section'  => 'section-banner-content',
+			'section'  => 'section-banner-contents',
 			'label'    => __( 'Banner Subheading', 'home-page-banner' ),
 			'priority' => 6,
 		)

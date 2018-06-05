@@ -18,7 +18,7 @@ $wp_customize->add_panel(
 );
 
 $wp_customize->add_section(
-	'section-banner-content', array(
+	'section-banner-contents', array(
 		'priority' => 15,
 		'title'    => __( 'Content', 'home-page-banner' ),
 		'panel'    => 'panel-home-page-banner',

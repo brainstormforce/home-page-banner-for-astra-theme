@@ -38,11 +38,12 @@ if ( ! class_exists( 'Astra_Home_Page_Banner' ) ) {
 		 * Constructor function that initializes required actions and hooks
 		 */
 		public function __construct() {
+
 			require_once HOME_PAGE_BANNER_DIR . 'inc/classes/class-astra-home-page-banner-loader.php';
 			require_once HOME_PAGE_BANNER_DIR . 'inc/classes/class-astra-home-page-banner-markup.php';
 
 			// Include front end files.
-			if ( ! is_admin() ) {
+			if ( ! is_admin() && defined( 'ASTRA_THEME_SETTINGS' ) ) {
 				require_once HOME_PAGE_BANNER_DIR . 'inc/classes/dynamic.css.php';
 			}
 

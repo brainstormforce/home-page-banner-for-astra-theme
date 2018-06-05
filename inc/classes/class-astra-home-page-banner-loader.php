@@ -37,12 +37,25 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		 */
 		public function __construct() {
 
+			add_action( 'admin_notices', array( $this, 'add_notice' ), 1 );
 			add_filter( 'astra_theme_defaults', array( $this, 'theme_defaults' ) );
 			add_action( 'customize_preview_init', array( $this, 'preview_scripts' ) );
 			add_action( 'customize_register', array( $this, 'customize_register' ) );
 			add_action( 'customize_controls_enqueue_scripts', array( $this, 'controls_scripts' ) );
 			add_action( 'astra_get_fonts', array( $this, 'add_fonts' ) );
 
+		}
+
+		/**
+		 * Add Admin Notice.
+		 */
+		function add_notice() {
+
+			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
+				
+				$plugin_name = 'Home Page Banner';
+				printf( __( '<div class="notice notice-error is-dismissible"><p>Astra Theme needs to be active for you to use currently installed "%1$s" plugin. <a href="%2$s">Install & Activate Now</a></p></div>', 'home-page-banner' ), $plugin_name, esc_url( admin_url( 'themes.php?theme=astra' ) ) );
+			}
 		}
 
 		/**
@@ -78,6 +91,10 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 		 */
 		function customize_register( $wp_customize ) {
+
+			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
+				return;
+			}
 
 			/**
 			 * Register Sections & Panels

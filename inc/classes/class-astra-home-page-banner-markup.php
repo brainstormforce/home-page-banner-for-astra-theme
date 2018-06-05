@@ -55,6 +55,10 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 		 */
 		function body_classes( $classes ) {
 
+			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
+				return;
+			}
+
 			$classes[] = 'ast-home-page-banner';
 
 			return $classes;
@@ -69,7 +73,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 		 */
 		function load_markup() {
 
-			if ( ! is_home() ) {
+			if ( ( ! is_home() || ! is_front_page() ) && ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
 				return;
 			}
 			
@@ -94,7 +98,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 		 */
 		function add_scripts() {
 
-			if ( ! is_home() ) {
+			if ( ( ! is_home() || ! is_front_page() ) && ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
 				return;
 			}
 

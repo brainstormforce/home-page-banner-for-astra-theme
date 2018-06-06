@@ -71,26 +71,29 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		function load_markup() {
+		function load_markup( ) {
 
-			if ( ( ! is_home() || ! is_front_page() ) && ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
+			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
 				return;
 			}
+
+			if( is_home() || is_front_page() ) {
+				$banner_heading 	= astra_get_option('ast-banner-heading');
+				$banner_subheading 	= astra_get_option('ast-banner-subheading');
+				$home_page_banner_size 	= astra_get_option('banner-image-size-option');
+
+				// Full Screen.
+				$full_screen = ( 'full-size' == $home_page_banner_size ) ? ' ast-full-home-page-banner' : '';
+
+				$html = '<div class="home-page-banner'.$full_screen.'">' .
+							'<div class="heading-container">' .
+								'<h2 class="banner-heading">'.$banner_heading.'</h2>' .
+								'<h3 class="banner-subheading">'.$banner_subheading.'</h3>' .
+							'</div>' .
+						'</div>';
+				echo $html;
+			}
 			
-			$banner_heading 	= astra_get_option('ast-banner-heading');
-			$banner_subheading 	= astra_get_option('ast-banner-subheading');
-			$home_page_banner_size 	= astra_get_option('banner-image-size-option');
-
-			// Full Screen.
-			$full_screen = ( 'full-size' == $home_page_banner_size ) ? ' ast-full-home-page-banner' : '';
-
-			$html = '<div class="home-page-banner'.$full_screen.'">' .
-						'<div class="heading-container">' .
-							'<h2 class="banner-heading">'.$banner_heading.'</h2>' .
-							'<h3 class="banner-subheading">'.$banner_subheading.'</h3>' .
-						'</div>' .
-					'</div>';
-			echo $html;
 		}
 
 		/**
@@ -98,12 +101,14 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 		 */
 		function add_scripts() {
 
-			if ( ( ! is_home() || ! is_front_page() ) && ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
+			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
 				return;
 			}
 
-			wp_enqueue_script( 'home-page-banner-js', HOME_PAGE_BANNER_URI . 'inc/assets/js/home-page-banner.js', array( 'jquery' ), HOME_PAGE_BANNER_VER );
-			wp_enqueue_style( 'home-page-banner-css', HOME_PAGE_BANNER_URI . 'inc/assets/css/style.css', array(), HOME_PAGE_BANNER_VER );
+			if( is_home() || is_front_page() ) {
+				wp_enqueue_style( 'home-page-banner-css', HOME_PAGE_BANNER_URI . 'inc/assets/css/style.css', array(), HOME_PAGE_BANNER_VER );
+				wp_enqueue_script( 'home-page-banner-js', HOME_PAGE_BANNER_URI . 'inc/assets/js/home-page-banner.js', array( 'jquery' ), HOME_PAGE_BANNER_VER );
+			}
 		}
 	}
 }

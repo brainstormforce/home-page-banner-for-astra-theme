@@ -49,6 +49,8 @@ function astra_banner_dynamic_css() {
 	$custom_background_top_p    	= astra_get_option( 'banner-custom-top-padding' );
 	$custom_background_bottom_p 	= astra_get_option( 'banner-custom-bottom-padding' );
 
+	$custom_top_padding = $custom_bottom_padding = '';
+	
 	if ( 'custom-size' == $background_size ) {
 
 		$custom_top_padding = $custom_background_top_p;

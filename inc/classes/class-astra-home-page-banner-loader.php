@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * Astra Home Page Banner - Customizer.
  *
@@ -66,8 +66,8 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		 */
 		function theme_defaults( $defaults ) {
 
-			$defaults['ast-banner-heading']     			= __( 'Heading', 'home-page-banner' );
-			$defaults['ast-banner-subheading']  			= __( 'Sub Heading', 'home-page-banner' );
+			$defaults['ast-banner-heading']     			= __( 'Perfect Theme for Any Website', 'home-page-banner' );
+			$defaults['ast-banner-subheading']  			= __( 'Lightning Fast & Easily Customizable', 'home-page-banner' );
 			$defaults['banner-font-family'] 				= 'inherit';
 			$defaults['banner-font-weight'] 				= 'inherit';
 			$defaults['banner-subheading-font-family'] 		= 'inherit';
@@ -81,6 +81,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 			$defaults['banner-image-size-option'] 			= 'custom-size';
 			$defaults['banner-custom-top-padding'] 			= '5';
 			$defaults['banner-custom-bottom-padding'] 		= '5';
+			$defaults['home-page-banner-image']     		= HOME_PAGE_BANNER_URI . 'inc/assets/images/banner.jpg';
 
 			return $defaults;
 		}

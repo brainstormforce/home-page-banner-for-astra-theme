@@ -301,7 +301,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'type'    => 'ast-font-family',
 				'label'   => __( 'Font Family', 'home-page-banner' ),
 				'section' => 'section-banner-style',
-				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-weight]',
+				'connect' => ASTRA_THEME_SETTINGS . '[banner-subheading-font-weight]',
 			)
 		)
 	);
@@ -319,7 +319,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'type'    => 'ast-font-weight',
 				'label'   => __( 'Font Weight', 'home-page-banner' ),
 				'section' => 'section-banner-style',
-				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-family]',
+				'connect' => ASTRA_THEME_SETTINGS . '[banner-subheading-font-family]',
 			)
 		)
 	);

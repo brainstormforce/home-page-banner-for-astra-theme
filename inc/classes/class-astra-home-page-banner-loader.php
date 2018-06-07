@@ -79,8 +79,8 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 			$defaults['banner-bg-color'] 					= '#ffffff';
 			$defaults['banner-subheading-bg-color'] 		= '#ffffff';
 			$defaults['banner-image-size-option'] 			= 'custom-size';
-			$defaults['banner-custom-top-padding'] 			= '10';
-			$defaults['banner-custom-bottom-padding'] 		= '10';
+			$defaults['banner-custom-top-padding'] 			= '5';
+			$defaults['banner-custom-bottom-padding'] 		= '5';
 			$defaults['home-page-banner-image']     		= HOME_PAGE_BANNER_URI . 'inc/assets/images/banner.jpg';
 
 			return $defaults;

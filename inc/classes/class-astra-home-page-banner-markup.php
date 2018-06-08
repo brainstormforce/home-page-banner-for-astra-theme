@@ -77,7 +77,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 				return;
 			}
 
-			if( is_home() || is_front_page() ) {
+			if( is_front_page() ) {
 				$banner_heading 	= astra_get_option('ast-banner-heading');
 				$banner_subheading 	= astra_get_option('ast-banner-subheading');
 				$home_page_banner_size 	= astra_get_option('banner-image-size-option');
@@ -105,7 +105,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 				return;
 			}
 
-			if( is_home() || is_front_page() ) {
+			if( is_front_page() ) {
 				wp_enqueue_style( 'home-page-banner-css', HOME_PAGE_BANNER_URI . 'inc/assets/css/style.css', array(), HOME_PAGE_BANNER_VER );
 				wp_enqueue_script( 'home-page-banner-js', HOME_PAGE_BANNER_URI . 'inc/assets/js/home-page-banner.js', array( 'jquery' ), HOME_PAGE_BANNER_VER );
 			}

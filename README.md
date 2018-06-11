@@ -25,11 +25,11 @@ The Home Page Banner plugin is created for <a href="https://wpastra.com/?utm_sou
 
 ## Frequently Asked Questions ##
 
-= Which theme can I use this plugin with? =
+### Which theme can I use this plugin with? ###
 
 Astra Bulk Edit plugin can be used only with the Astra theme.
 
-= How does this plugin work? =
+### How does this plugin work? ###
 
 1.Install and activate the plugin
 2.You will find Home Page Banner settings in the customizer. Refer screenshots.

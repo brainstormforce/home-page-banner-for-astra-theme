@@ -3,7 +3,7 @@ Contributors: brainstormforce, balachandark
 Donate link: https://www.brainstormforce.com/payment/
 Requires at least: 4.4
 Tags: astra addons, banner image, home page banner, banner, astra
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.4
 Tested up to: 4.9.6
 License: GPLv2 or later
@@ -37,6 +37,9 @@ Astra Bulk Edit plugin can be used only with the Astra theme.
 
 
 == Changelog ==
+
+= 1.0.1 =
+- Fixed: CSS not working with child theme.
 
 = 1.0.0 =
 - Initial release

@@ -43,10 +43,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner' ) ) {
 			require_once HOME_PAGE_BANNER_DIR . 'inc/classes/class-astra-home-page-banner-markup.php';
 
 			// Include front end files.
-			$get_theme = wp_get_theme();
-			$theme_name = $get_theme->get( 'Name' );
-			
-			if ( ! is_admin() && 'Astra' === $theme_name ) {
+			if ( ! is_admin() && 'astra' === get_template() ) {
 				require_once HOME_PAGE_BANNER_DIR . 'inc/classes/dynamic.css.php';
 			}
 

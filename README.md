@@ -1,10 +1,11 @@
 # Home Page Banner for Astra Theme #
-**Contributors:** [brainstormforce](https://profiles.wordpress.org/brainstormforce), [balachandark](https://profiles.wordpress.org/balachandark)  
+**Contributors:** brainstormforce, balachandark  
 **Donate link:** https://www.brainstormforce.com/payment/  
-**Requires at least:** 4.4
-**Tags:**  astra addons, astra addon, banner image, home page banner
-**Stable tag:** 1.0.1
-**Tested up to:** 4.9.6
+**Requires at least:** 4.4  
+**Tags:** astra addons, banner image, home page banner, banner, astra  
+**Stable tag:** 1.0.1  
+**Requires PHP:** 5.4  
+**Tested up to:** 4.9.6  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -34,6 +35,7 @@ Astra Bulk Edit plugin can be used only with the Astra theme.
 1.Install and activate the plugin
 2.You will find Home Page Banner settings in the customizer. Refer screenshots.
 
+
 ## Changelog ##
 
 ### 1.0.1 ###
@@ -41,4 +43,3 @@ Astra Bulk Edit plugin can be used only with the Astra theme.
 
 ### 1.0.0 ###
 - Initial release
-

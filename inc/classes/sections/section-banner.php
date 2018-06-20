@@ -65,7 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	$wp_customize->add_control(
 		ASTRA_THEME_SETTINGS . '[banner-custom-top-padding]', array(
 			'type'     => 'text',
-			'description'	=> 'Custom Size can be given any positive number with or without units as "5" or "5px". Default unit is "%"',
+			'description'	=> 'Custom Size can be given any positive number with or without units as "10" or "10px". Default unit is "%"',
 			'section'  => 'section-banner-contents',
 			'label'    => __( 'Top Padding', 'home-page-banner' ),
 			'priority' => 15,

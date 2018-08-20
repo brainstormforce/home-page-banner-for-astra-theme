@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * Astra Home Page Banner - Customizer.
  *

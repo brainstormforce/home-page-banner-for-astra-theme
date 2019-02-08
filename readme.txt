@@ -1,11 +1,11 @@
 === Home Page Banner for Astra Theme ===
-Contributors: brainstormforce, balachandark
-Donate link: https://www.brainstormforce.com/payment/
+Contributors: brainstormforce
+Donate link: https://www.paypal.me/BrainstormForce
 Requires at least: 4.4
 Tags: astra addons, banner image, home page banner, banner, astra
 Stable tag: 1.0.1
 Requires PHP: 5.4
-Tested up to: 4.9.6
+Tested up to: 5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

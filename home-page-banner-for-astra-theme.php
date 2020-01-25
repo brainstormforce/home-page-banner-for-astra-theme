@@ -11,7 +11,6 @@
  * @package Home Page Banner for Astra Theme
  */
 
-
 /**
  * Set constants.
  */

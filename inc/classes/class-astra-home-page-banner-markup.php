@@ -28,7 +28,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 		 */
 		public static function get_instance() {
 			if ( ! isset( self::$instance ) ) {
-				self::$instance = new self;
+				self::$instance = new self();
 			}
 			return self::$instance;
 		}
@@ -53,7 +53,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 		 * @param  array $classes Body Class Array.
 		 * @return array
 		 */
-		function body_classes( $classes ) {
+		public function body_classes( $classes ) {
 
 			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
 				return;
@@ -71,43 +71,43 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		function load_markup( ) {
+		public function load_markup() {
 
 			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
 				return;
 			}
 
-			if( is_front_page() ) {
-				$banner_heading 	= astra_get_option('ast-banner-heading');
-				$banner_subheading 	= astra_get_option('ast-banner-subheading');
-				$home_page_banner_size 	= astra_get_option('banner-image-size-option');
+			if ( is_front_page() ) {
+				$banner_heading        = astra_get_option( 'ast-banner-heading' );
+				$banner_subheading     = astra_get_option( 'ast-banner-subheading' );
+				$home_page_banner_size = astra_get_option( 'banner-image-size-option' );
 
 				// Full Screen.
 				$full_screen = ( 'full-size' == $home_page_banner_size ) ? ' ast-full-home-page-banner' : '';
 
-				$html = '<div class="home-page-banner'.$full_screen.'">' .
+				$html = '<div class="home-page-banner' . $full_screen . '">' .
 							'<div class="heading-container">' .
-								'<h2 class="banner-heading">'.$banner_heading.'</h2>' .
-								'<h3 class="banner-subheading">'.$banner_subheading.'</h3>' .
+								'<h2 class="banner-heading">' . $banner_heading . '</h2>' .
+								'<h3 class="banner-subheading">' . $banner_subheading . '</h3>' .
 							'</div>' .
 						'</div>';
-				echo $html;
+				echo wp_kses_post( $html );
 			}
-			
+
 		}
 
 		/**
 		 * Add Styles
 		 */
-		function add_scripts() {
+		public function add_scripts() {
 
 			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
 				return;
 			}
 
-			if( is_front_page() ) {
+			if ( is_front_page() ) {
 				wp_enqueue_style( 'home-page-banner-css', HOME_PAGE_BANNER_URI . 'inc/assets/css/style.css', array(), HOME_PAGE_BANNER_VER );
-				wp_enqueue_script( 'home-page-banner-js', HOME_PAGE_BANNER_URI . 'inc/assets/js/home-page-banner.js', array( 'jquery' ), HOME_PAGE_BANNER_VER );
+				wp_enqueue_script( 'home-page-banner-js', HOME_PAGE_BANNER_URI . 'inc/assets/js/home-page-banner.js', array( 'jquery' ), HOME_PAGE_BANNER_VER, false );
 			}
 		}
 	}

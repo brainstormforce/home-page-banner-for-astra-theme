@@ -27,7 +27,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		 */
 		public static function get_instance() {
 			if ( ! isset( self::$instance ) ) {
-				self::$instance = new self;
+				self::$instance = new self();
 			}
 			return self::$instance;
 		}
@@ -49,12 +49,10 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		/**
 		 * Add Admin Notice.
 		 */
-		function add_notice() {
+		public function add_notice() {
 
 			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
-				
-				$plugin_name = 'Home Page Banner';
-				printf( __( '<div class="notice notice-error is-dismissible"><p>Astra Theme needs to be active for you to use currently installed "%1$s" plugin. <a href="%2$s">Install & Activate Now</a></p></div>', 'home-page-banner' ), $plugin_name, esc_url( admin_url( 'themes.php?theme=astra' ) ) );
+				printf( wp_kses_post( '<div class="notice notice-error is-dismissible"><p>Astra Theme needs to be active for you to use currently installed "%1$s" plugin. <a href="%2$s">Install & Activate Now</a></p></div>', 'home-page-banner' ), esc_html_e( 'Home Page Banner', 'home-page-banner' ), esc_url( admin_url( 'themes.php?theme=astra' ) ) );
 			}
 		}
 
@@ -64,24 +62,24 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		 * @param  array $defaults  Astra options default value array.
 		 * @return array
 		 */
-		function theme_defaults( $defaults ) {
+		public function theme_defaults( $defaults ) {
 
-			$defaults['ast-banner-heading']     			= __( 'Perfect Theme for Any Website', 'home-page-banner' );
-			$defaults['ast-banner-subheading']  			= __( 'Lightning Fast & Easily Customizable', 'home-page-banner' );
-			$defaults['banner-font-family'] 				= 'inherit';
-			$defaults['banner-font-weight'] 				= 'inherit';
-			$defaults['banner-subheading-font-family'] 		= 'inherit';
-			$defaults['banner-subheading-font-weight'] 		= 'inherit';
-			$defaults['banner-heading-text-transform']		= '';
-			$defaults['banner-heading-font-size']			= '';
-			$defaults['banner-subheading-text-transform']	= '';
-			$defaults['banner-subheading-font-size']		= '';
-			$defaults['banner-bg-color'] 					= '#ffffff';
-			$defaults['banner-subheading-bg-color'] 		= '#ffffff';
-			$defaults['banner-image-size-option'] 			= 'custom-size';
-			$defaults['banner-custom-top-padding'] 			= '10';
-			$defaults['banner-custom-bottom-padding'] 		= '10';
-			$defaults['home-page-banner-image']     		= HOME_PAGE_BANNER_URI . 'inc/assets/images/banner.jpg';
+			$defaults['ast-banner-heading']               = __( 'Perfect Theme for Any Website', 'home-page-banner' );
+			$defaults['ast-banner-subheading']            = __( 'Lightning Fast & Easily Customizable', 'home-page-banner' );
+			$defaults['banner-font-family']               = 'inherit';
+			$defaults['banner-font-weight']               = 'inherit';
+			$defaults['banner-subheading-font-family']    = 'inherit';
+			$defaults['banner-subheading-font-weight']    = 'inherit';
+			$defaults['banner-heading-text-transform']    = '';
+			$defaults['banner-heading-font-size']         = '';
+			$defaults['banner-subheading-text-transform'] = '';
+			$defaults['banner-subheading-font-size']      = '';
+			$defaults['banner-bg-color']                  = '#ffffff';
+			$defaults['banner-subheading-bg-color']       = '#ffffff';
+			$defaults['banner-image-size-option']         = 'custom-size';
+			$defaults['banner-custom-top-padding']        = '10';
+			$defaults['banner-custom-bottom-padding']     = '10';
+			$defaults['home-page-banner-image']           = HOME_PAGE_BANNER_URI . 'inc/assets/images/banner.jpg';
 
 			return $defaults;
 		}
@@ -91,7 +89,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		 *
 		 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 		 */
-		function customize_register( $wp_customize ) {
+		public function customize_register( $wp_customize ) {
 
 			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
 				return;
@@ -113,7 +111,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		 *
 		 * @see 'astra-customizer-controls-js' panel in parent theme
 		 */
-		function preview_scripts() {
+		public function preview_scripts() {
 
 			wp_enqueue_script( 'home-page-banner-preview', HOME_PAGE_BANNER_URI . 'inc/assets/js/customizer-preview.js', array( 'astra-customizer-preview-js', 'customize-preview' ), HOME_PAGE_BANNER_VER, true );
 		}
@@ -121,7 +119,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		/**
 		 * Customizer Preview
 		 */
-		function controls_scripts() {
+		public function controls_scripts() {
 
 			wp_enqueue_script( 'home-page-banner-toggles', HOME_PAGE_BANNER_URI . 'inc/assets/js/customizer-toggles.js', array( 'astra-customizer-controls-toggle-js' ), HOME_PAGE_BANNER_VER, true );
 		}
@@ -135,7 +133,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 			$font_weight = astra_get_option( 'banner-font-weight' );
 
 			Astra_Fonts::add_font( $font_family, $font_weight );
-			
+
 			$subheading_font_family = astra_get_option( 'banner-subheading-font-family' );
 			$subheading_font_weight = astra_get_option( 'banner-subheading-font-weight' );
 

@@ -52,7 +52,8 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 		public function add_notice() {
 
 			if ( ! defined( 'ASTRA_THEME_SETTINGS' ) ) {
-				printf( wp_kses_post( '<div class="notice notice-error is-dismissible"><p>Astra Theme needs to be active for you to use currently installed "%1$s" plugin. <a href="%2$s">Install & Activate Now</a></p></div>', 'home-page-banner' ), esc_html_e( 'Home Page Banner', 'home-page-banner' ), esc_url( admin_url( 'themes.php?theme=astra' ) ) );
+				$plugin_name = 'Home Page Banner';
+				printf( wp_kses_post( '<div class="notice notice-error is-dismissible"><p>Astra Theme needs to be active for you to use currently installed "%1$s" plugin. <a href="%2$s">Install & Activate Now</a></p></div>', 'home-page-banner' ), esc_html( $plugin_name ), esc_url( admin_url( 'themes.php?theme=astra' ) ) );
 			}
 		}
 

@@ -6,7 +6,6 @@
  * @since 1.0.0
  */
 
-
 if ( ! class_exists( 'Astra_Home_Page_Banner' ) ) {
 
 	/**
@@ -29,7 +28,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner' ) ) {
 		 */
 		public static function get_instance() {
 			if ( ! isset( self::$instance ) ) {
-				self::$instance = new self;
+				self::$instance = new self();
 			}
 			return self::$instance;
 		}

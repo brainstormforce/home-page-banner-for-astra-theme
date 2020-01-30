@@ -33,7 +33,7 @@ This plugin can be used only with the Astra theme.
 = How does this plugin work? =
 
 1.Install and activate the plugin
-2.You will find Home Page Banner settings in the customizer. Refer screenshots.
+2.You will find Home Page Banner settings in the customizer.
 
 
 == Changelog ==

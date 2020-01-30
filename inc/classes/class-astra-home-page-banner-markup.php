@@ -91,7 +91,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Markup' ) ) {
 								'<h3 class="banner-subheading">' . $banner_subheading . '</h3>' .
 							'</div>' .
 						'</div>';
-				echo wp_kses_post( $html );
+				echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 		}

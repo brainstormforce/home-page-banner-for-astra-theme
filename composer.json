@@ -2,7 +2,7 @@
     "name": "brainstormforce/home-page-banner-for-astra-theme",
     "description": "An easy-to-use plugin for the Astra theme that lets you create a beautiful banner on your homepage.",
     "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
         "wp-coding-standards/wpcs": "dev-master",
         "phpcompatibility/phpcompatibility-wp": "*"
     },

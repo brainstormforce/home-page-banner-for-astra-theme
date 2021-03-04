@@ -38,6 +38,9 @@ This plugin can be used only with the Astra theme.
 
 ## Changelog ##
 
+### 1.0.3 ###
+- Fix: Added compatibility with Astra Theme v3.1.0
+
 ### 1.0.2 ###
 - Fix: Security Update.
 

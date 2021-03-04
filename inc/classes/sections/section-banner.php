@@ -146,16 +146,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	);
 
 	$wp_customize->add_control(
-		new Astra_Control_Divider(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[divider-section-banner-heading]',
-			array(
-				'type'     => 'ast-divider',
-				'section'  => 'section-banner-style',
-				'priority' => 5,
-				'label'    => __( 'Heading', 'home-page-banner' ),
-				'settings' => array(),
-			)
+		ASTRA_THEME_SETTINGS . '[divider-section-banner-heading]',
+		array(
+			'type'     => 'ast-divider',
+			'section'  => 'section-banner-style',
+			'priority' => 5,
+			'label'    => __( 'Heading', 'home-page-banner' ),
+			'settings' => array(),
 		)
 	);
 
@@ -171,15 +168,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		new Astra_Control_Typography(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[banner-font-family]',
-			array(
-				'type'    => 'ast-font-family',
-				'label'   => __( 'Font Family', 'home-page-banner' ),
-				'section' => 'section-banner-style',
-				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-weight]',
-			)
+		ASTRA_THEME_SETTINGS . '[banner-font-family]',
+		array(
+			'type'    => 'ast-font-family',
+			'label'   => __( 'Font Family', 'home-page-banner' ),
+			'section' => 'section-banner-style',
+			'connect' => ASTRA_THEME_SETTINGS . '[banner-font-weight]',
 		)
 	);
 
@@ -192,15 +186,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		new Astra_Control_Typography(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[banner-font-weight]',
-			array(
-				'type'    => 'ast-font-weight',
-				'label'   => __( 'Font Weight', 'home-page-banner' ),
-				'section' => 'section-banner-style',
-				'connect' => ASTRA_THEME_SETTINGS . '[banner-font-family]',
-			)
+		ASTRA_THEME_SETTINGS . '[banner-font-weight]',
+		array(
+			'type'    => 'ast-font-weight',
+			'label'   => __( 'Font Weight', 'home-page-banner' ),
+			'section' => 'section-banner-style',
+			'connect' => ASTRA_THEME_SETTINGS . '[banner-font-family]',
 		)
 	);
 
@@ -239,21 +230,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		new Astra_Control_Responsive(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[banner-heading-font-size]',
-			array(
-				'section'     => 'section-banner-style',
-				'label'       => __( 'Font Size', 'astra-addon' ),
-				'type'        => 'ast-responsive',
-				'input_attrs' => array(
-					'min' => 0,
-				),
-				'units'       => array(
-					'px' => 'px',
-					'em' => 'em',
-				),
-			)
+		ASTRA_THEME_SETTINGS . '[banner-heading-font-size]',
+		array(
+			'section'     => 'section-banner-style',
+			'label'       => __( 'Font Size', 'astra-addon' ),
+			'type'        => 'ast-responsive',
+			'input_attrs' => array(
+				'min' => 0,
+			),
+			'units'       => array(
+				'px' => 'px',
+				'em' => 'em',
+			),
 		)
 	);
 
@@ -267,20 +255,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		new Astra_Control_Slider(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[banner-heading-line-height]',
-			array(
-				'section'     => 'section-banner-style',
-				'label'       => __( 'Line Height', 'astra-addon' ),
-				'type'        => 'ast-slider',
-				'suffix'      => '',
-				'input_attrs' => array(
-					'min'  => 1,
-					'step' => 0.01,
-					'max'  => 5,
-				),
-			)
+		ASTRA_THEME_SETTINGS . '[banner-heading-line-height]',
+		array(
+			'section'     => 'section-banner-style',
+			'label'       => __( 'Line Height', 'astra-addon' ),
+			'type'        => 'ast-slider',
+			'suffix'      => '',
+			'input_attrs' => array(
+				'min'  => 1,
+				'step' => 0.01,
+				'max'  => 5,
+			),
 		)
 	);
 
@@ -294,28 +279,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		new Astra_Control_Color(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[banner-bg-color]',
-			array(
-				'type'    => 'ast-color',
-				'label'   => __( 'Color', 'home-page-banner' ),
-				'section' => 'section-banner-style',
-			)
+		ASTRA_THEME_SETTINGS . '[banner-bg-color]',
+		array(
+			'type'    => 'ast-color',
+			'label'   => __( 'Color', 'home-page-banner' ),
+			'section' => 'section-banner-style',
 		)
 	);
 
 	$wp_customize->add_control(
-		new Astra_Control_Divider(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[divider-section-banner-subheading]',
-			array(
-				'type'     => 'ast-divider',
-				'section'  => 'section-banner-style',
-				'priority' => 10,
-				'label'    => __( 'Subheading', 'home-page-banner' ),
-				'settings' => array(),
-			)
+		ASTRA_THEME_SETTINGS . '[divider-section-banner-subheading]',
+		array(
+			'type'     => 'ast-divider',
+			'section'  => 'section-banner-style',
+			'priority' => 10,
+			'label'    => __( 'Subheading', 'home-page-banner' ),
+			'settings' => array(),
 		)
 	);
 
@@ -331,15 +310,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		new Astra_Control_Typography(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[banner-subheading-font-family]',
-			array(
-				'type'    => 'ast-font-family',
-				'label'   => __( 'Font Family', 'home-page-banner' ),
-				'section' => 'section-banner-style',
-				'connect' => ASTRA_THEME_SETTINGS . '[banner-subheading-font-weight]',
-			)
+		ASTRA_THEME_SETTINGS . '[banner-subheading-font-family]',
+		array(
+			'type'    => 'ast-font-family',
+			'label'   => __( 'Font Family', 'home-page-banner' ),
+			'section' => 'section-banner-style',
+			'connect' => ASTRA_THEME_SETTINGS . '[banner-subheading-font-weight]',
 		)
 	);
 
@@ -352,15 +328,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		new Astra_Control_Typography(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[banner-subheading-font-weight]',
-			array(
-				'type'    => 'ast-font-weight',
-				'label'   => __( 'Font Weight', 'home-page-banner' ),
-				'section' => 'section-banner-style',
-				'connect' => ASTRA_THEME_SETTINGS . '[banner-subheading-font-family]',
-			)
+		ASTRA_THEME_SETTINGS . '[banner-subheading-font-weight]',
+		array(
+			'type'    => 'ast-font-weight',
+			'label'   => __( 'Font Weight', 'home-page-banner' ),
+			'section' => 'section-banner-style',
+			'connect' => ASTRA_THEME_SETTINGS . '[banner-subheading-font-family]',
 		)
 	);
 
@@ -399,21 +372,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		new Astra_Control_Responsive(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[banner-subheading-font-size]',
-			array(
-				'section'     => 'section-banner-style',
-				'label'       => __( 'Font Size', 'astra-addon' ),
-				'type'        => 'ast-responsive',
-				'input_attrs' => array(
-					'min' => 0,
-				),
-				'units'       => array(
-					'px' => 'px',
-					'em' => 'em',
-				),
-			)
+		ASTRA_THEME_SETTINGS . '[banner-subheading-font-size]',
+		array(
+			'section'     => 'section-banner-style',
+			'label'       => __( 'Font Size', 'astra-addon' ),
+			'type'        => 'ast-responsive',
+			'input_attrs' => array(
+				'min' => 0,
+			),
+			'units'       => array(
+				'px' => 'px',
+				'em' => 'em',
+			),
 		)
 	);
 
@@ -427,20 +397,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		new Astra_Control_Slider(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[banner-subheading-line-height]',
-			array(
-				'section'     => 'section-banner-style',
-				'label'       => __( 'Line Height', 'astra-addon' ),
-				'type'        => 'ast-slider',
-				'suffix'      => '',
-				'input_attrs' => array(
-					'min'  => 1,
-					'step' => 0.01,
-					'max'  => 5,
-				),
-			)
+		ASTRA_THEME_SETTINGS . '[banner-subheading-line-height]',
+		array(
+			'section'     => 'section-banner-style',
+			'label'       => __( 'Line Height', 'astra-addon' ),
+			'type'        => 'ast-slider',
+			'suffix'      => '',
+			'input_attrs' => array(
+				'min'  => 1,
+				'step' => 0.01,
+				'max'  => 5,
+			),
 		)
 	);
 
@@ -454,14 +421,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		)
 	);
 	$wp_customize->add_control(
-		new Astra_Control_Color(
-			$wp_customize,
-			ASTRA_THEME_SETTINGS . '[banner-subheading-bg-color]',
-			array(
-				'type'    => 'ast-color',
-				'label'   => __( 'Color', 'home-page-banner' ),
-				'section' => 'section-banner-style',
-			)
+		ASTRA_THEME_SETTINGS . '[banner-subheading-bg-color]',
+		array(
+			'type'    => 'ast-color',
+			'label'   => __( 'Color', 'home-page-banner' ),
+			'section' => 'section-banner-style',
 		)
 	);
 

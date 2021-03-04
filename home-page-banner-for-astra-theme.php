@@ -3,7 +3,7 @@
  * Plugin Name: Home Page Banner for Astra Theme
  * Plugin URI: https://wpastra.com/
  * Description: This plugin is an add-on for the Astra WordPress Theme. It will help in adding a beautiful banner to your home page.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Brainstorm Force
  * Author URI: http://www.brainstormforce.com
  * Text Domain: home-page-banner
@@ -16,7 +16,7 @@
  */
 
 if ( ! defined( 'HOME_PAGE_BANNER_VER' ) ) {
-	define( 'HOME_PAGE_BANNER_VER', '1.0.2' );
+	define( 'HOME_PAGE_BANNER_VER', '1.0.3' );
 }
 
 if ( ! defined( 'HOME_PAGE_BANNER_FILE' ) ) {
@@ -47,6 +47,6 @@ if ( ! function_exists( 'home_page_banner_setup' ) ) :
 		require_once HOME_PAGE_BANNER_DIR . 'inc/class-astra-home-page-banner.php';
 	}
 
-	add_action( 'plugins_loaded', 'home_page_banner_setup' );
+	add_action( 'after_setup_theme', 'home_page_banner_setup' );
 
 endif;

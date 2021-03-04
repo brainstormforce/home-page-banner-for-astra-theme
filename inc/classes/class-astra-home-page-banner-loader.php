@@ -40,7 +40,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 			add_action( 'admin_notices', array( $this, 'add_notice' ), 1 );
 			add_filter( 'astra_theme_defaults', array( $this, 'theme_defaults' ) );
 			add_action( 'customize_preview_init', array( $this, 'preview_scripts' ) );
-			add_action( 'customize_register', array( $this, 'customize_register' ) );
+			add_action( 'customize_register', array( $this, 'customize_register' ), 2 );
 			add_action( 'customize_controls_enqueue_scripts', array( $this, 'controls_scripts' ) );
 			add_action( 'astra_get_fonts', array( $this, 'add_fonts' ) );
 
@@ -105,6 +105,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 			 * Sections
 			 */
 			require_once HOME_PAGE_BANNER_DIR . 'inc/classes/sections/section-banner.php';
+			require_once HOME_PAGE_BANNER_DIR . 'inc/classes/sections/class-astra-customizer-home-page-banner-configs.php';
 		}
 
 		/**

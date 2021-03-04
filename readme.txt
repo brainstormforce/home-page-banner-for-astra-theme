@@ -3,9 +3,9 @@ Contributors: brainstormforce
 Donate link: https://www.paypal.me/BrainstormForce
 Requires at least: 4.4
 Tags: astra addons, banner image, home page banner, banner, astra
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 5.4
-Tested up to: 5.6
+Tested up to: 5.6.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,9 @@ This plugin can be used only with the Astra theme.
 
 
 == Changelog ==
+
+= 1.0.3 =
+- Fix: Added compatibility with Astra Theme v3.1.0
 
 = 1.0.2 =
 - Fix: Security Update.

@@ -3,7 +3,7 @@
  * Astra Theme Customizer Configuration Home Page Banner.
  *
  * @package Home Page Banner for Astra Theme
- * @since x.x.x
+ * @since 1.0.3
  */
 
 // No direct access, please.
@@ -18,7 +18,7 @@ if ( ! class_exists( 'Astra_Customizer_Config_Base' ) ) {
 /**
  * Register Home Page Banner Customizer Configurations.
  *
- * @since 3.0.0
+ * @since 1.0.3
  */
 class Astra_Customizer_Home_Page_Banner_Configs extends Astra_Customizer_Config_Base {
 
@@ -27,7 +27,7 @@ class Astra_Customizer_Home_Page_Banner_Configs extends Astra_Customizer_Config_
 	 *
 	 * @param Array                $configurations Astra Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
-	 * @since 3.0.0
+	 * @since 1.0.3
 	 * @return Array Astra Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {

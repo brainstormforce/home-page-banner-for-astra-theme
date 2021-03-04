@@ -16,7 +16,7 @@
  */
 
 if ( ! defined( 'HOME_PAGE_BANNER_VER' ) ) {
-	define( 'HOME_PAGE_BANNER_VER', '1.0.2' );
+	define( 'HOME_PAGE_BANNER_VER', '1.0.3' );
 }
 
 if ( ! defined( 'HOME_PAGE_BANNER_FILE' ) ) {

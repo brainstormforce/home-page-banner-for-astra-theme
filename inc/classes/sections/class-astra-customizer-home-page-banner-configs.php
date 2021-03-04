@@ -14,14 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 
 	/**
-	 * Register Above Header Customizer Configurations.
+	 * Register Home Page Banner Customizer Configurations.
 	 *
 	 * @since 3.0.0
 	 */
 	class Astra_Customizer_Home_Page_Banner_Configs extends Astra_Customizer_Config_Base {
 
 		/**
-		 * Register Builder Above Customizer Configurations.
+		 * Register Builder Home Page Banner Style Customizer Configurations.
 		 *
 		 * @param Array                $configurations Astra Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
@@ -34,9 +34,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 
 			$_configs = array(
 
-				/**
-				 * Option: Header Builder Tabs
-				 */
 				array(
 					'name'     => 'divider-section-banner-heading',
 					'section'  => $_section,
@@ -47,9 +44,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					'settings' => array(),
 				),
 
-				/**
-				 * Option: Headings Font Family
-				 */
 				array(
 					'name'      => ASTRA_THEME_SETTINGS . '[banner-font-family]',
 					'type'      => 'control',
@@ -61,9 +55,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					'connect'   => ASTRA_THEME_SETTINGS . '[banner-font-weight]',
 				),
 
-				/**
-				 * Option: Headings Font Weight
-				 */
 				array(
 					'name'              => ASTRA_THEME_SETTINGS . '[banner-font-weight]',
 					'type'              => 'control',
@@ -76,9 +67,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					'connect'           => ASTRA_THEME_SETTINGS . '[banner-font-family]',
 				),
 
-				/**
-				 * Option: Headings Text Transform
-				 */
 				array(
 					'name'      => ASTRA_THEME_SETTINGS . '[banner-heading-text-transform]',
 					'type'      => 'control',
@@ -96,9 +84,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					),
 				),
 
-				/**
-				 * Option: Widget Title Font Size
-				 */
 				array(
 					'name'        => ASTRA_THEME_SETTINGS . '[banner-heading-font-size]',
 					'default'     => astra_get_option( 'banner-heading-font-size' ),
@@ -116,9 +101,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					),
 				),
 
-				/**
-				 * Option: Heading <H1> Line Height
-				 */
 				array(
 					'name'              => ASTRA_THEME_SETTINGS . '[banner-heading-line-height]',
 					'section'           => $_section,
@@ -136,9 +118,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					),
 				),
 
-				/**
-				 * Option: Bottom Border Color
-				 */
 				array(
 					'name'      => ASTRA_THEME_SETTINGS . '[banner-bg-color]',
 					'default'   => astra_get_option( 'banner-bg-color' ),
@@ -149,9 +128,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					'title'     => __( 'Color', 'home-page-banner' ),
 				),
 
-				/**
-				 * Option: Header Builder Tabs
-				 */
 				array(
 					'name'     => 'divider-section-banner-subheading',
 					'section'  => $_section,
@@ -162,9 +138,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					'settings' => array(),
 				),
 
-				/**
-				 * Option: Headings Font Family
-				 */
 				array(
 					'name'      => ASTRA_THEME_SETTINGS . '[banner-subheading-font-family]',
 					'type'      => 'control',
@@ -176,9 +149,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					'connect'   => ASTRA_THEME_SETTINGS . '[banner-subheading-font-weight]',
 				),
 
-				/**
-				 * Option: Headings Font Weight
-				 */
 				array(
 					'name'              => ASTRA_THEME_SETTINGS . '[banner-subheading-font-weight]',
 					'type'              => 'control',
@@ -191,9 +161,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					'connect'           => ASTRA_THEME_SETTINGS . '[banner-subheading-font-family]',
 				),
 
-				/**
-				 * Option: Headings Text Transform
-				 */
 				array(
 					'name'      => ASTRA_THEME_SETTINGS . '[banner-subheading-text-transform]',
 					'type'      => 'control',
@@ -211,9 +178,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					),
 				),
 
-				/**
-				 * Option: Widget Title Font Size
-				 */
 				array(
 					'name'        => ASTRA_THEME_SETTINGS . '[banner-subheading-font-size]',
 					'default'     => astra_get_option( 'banner-subheading-font-size' ),
@@ -231,9 +195,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					),
 				),
 
-				/**
-				 * Option: Heading <H1> Line Height
-				 */
 				array(
 					'name'              => ASTRA_THEME_SETTINGS . '[banner-subheading-line-height]',
 					'section'           => $_section,
@@ -251,9 +212,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					),
 				),
 
-				/**
-				 * Option: Bottom Border Color
-				 */
 				array(
 					'name'      => ASTRA_THEME_SETTINGS . '[banner-subheading-bg-color]',
 					'default'   => astra_get_option( 'banner-subheading-bg-color' ),

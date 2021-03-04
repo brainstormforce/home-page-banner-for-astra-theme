@@ -105,6 +105,7 @@ if ( ! class_exists( 'Astra_Home_Page_Banner_Loader' ) ) {
 			 * Sections
 			 */
 			require_once HOME_PAGE_BANNER_DIR . 'inc/classes/sections/section-banner.php';
+			require_once HOME_PAGE_BANNER_DIR . 'inc/classes/sections/class-astra-customizer-home-page-banner-configs.php';
 		}
 
 		/**

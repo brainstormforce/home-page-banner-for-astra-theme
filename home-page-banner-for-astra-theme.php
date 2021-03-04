@@ -47,6 +47,6 @@ if ( ! function_exists( 'home_page_banner_setup' ) ) :
 		require_once HOME_PAGE_BANNER_DIR . 'inc/class-astra-home-page-banner.php';
 	}
 
-	add_action( 'plugins_loaded', 'home_page_banner_setup' );
+	add_action( 'after_setup_theme', 'home_page_banner_setup' );
 
 endif;

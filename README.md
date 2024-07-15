@@ -22,7 +22,7 @@ The Home Page Banner plugin is created for <a href="https://wpastra.com/?utm_sou
 1. Make sure you have the Astra theme installed and activated.
 2. Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
 3. Activate the plugin through the 'Plugins' screen in WordPress
-4. Once activated, you’ll find Home Page Banner setting in the theme's customizer.
+4. Once activated, you’ll find the Home Page Banner setting in the theme's customizer.
 
 ## Frequently Asked Questions ##
 
